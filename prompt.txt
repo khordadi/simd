@@ -1,0 +1,42 @@
+- the two set of instructions are equal. 
+ld1d:
+ld1d z3.d, p0/z, [x1]
+ld1d z4.d, p0/z, [x1, #1, mul vl]
+uzp1 z1.d, z3.d, z4.d
+uzp2 z2.d, z3.d, z4.d
+
+ld2d:
+ld2d { z1.d, z2.d }, p0/z, [x1]
+
+st2d:
+st2d { z1.d, z2.d }, p0, [x1]
+
+st1d:
+zip1 z3.d, z0.d, z1.d
+zip2 z4.d, z0.d, z1.d
+st1d z3.d, p0, [x1]
+st1d z4.d, p0, [x1, #1, mul vl]
+
+- write a benchmark to compare the performance (e2e time or bandwitdh) of 1d and 2d
+	- only load
+	- only store
+	- load and store together
+- use an array size that fits in l1 cache. 
+lscpu -C
+NAME ONE-SIZE ALL-SIZE WAYS TYPE        LEVEL  SETS PHY-LINE COHERENCY-SIZE
+L1d       64K     256K    4 Data            1   256                      64
+L1i       64K     256K    4 Instruction     1   256                      64
+L2         2M       8M    8 Unified         2  4096                      64
+L3        80M      80M   16 Unified         3 81920                      64
+
+- unroll 16 times to minimise overhead
+- avoid any function call or additional instruction in the middle of benchmark; to avoid overhead.
+- 3 modes:
+	- load from same address
+	- load linearly from the array
+	- load from random addresses (to calculate the random address uses the fastest way and minimume number of ASM instructions)
+- give me a single c file (benchmark.c)
+- give me bash instruction to compile and run
+- use clang-22
+- show the result in cli
+- also generate the result file (result.csv) so I can send it to you later for visualization
