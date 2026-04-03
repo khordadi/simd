@@ -1,0 +1,37 @@
+Cache,Pattern,Operation,DataType,Arch,Duration_ms,Bandwidth_Gbps
+Hot  ,Same   ,Load      ,i32,NEON,41.062,19.95
+Hot  ,Same   ,Store     ,i32,NEON,35.976,22.77
+Hot  ,Same   ,Load+Store,i32,NEON,284.409,5.76
+Hot  ,Linear ,Load      ,i32,NEON,42.361,19.34
+Hot  ,Linear ,Store     ,i32,NEON,36.105,22.69
+Hot  ,Linear ,Load+Store,i32,NEON,67.831,24.15
+Hot  ,Random ,Load      ,i32,NEON,41.234,19.87
+Hot  ,Random ,Store     ,i32,NEON,70.205,11.67
+Hot  ,Random ,Load+Store,i32,NEON,78.835,20.78
+Cold ,Same   ,Load      ,i32,NEON,4.374,18.73
+Cold ,Same   ,Store     ,i32,NEON,3.756,21.81
+Cold ,Same   ,Load+Store,i32,NEON,28.489,5.75
+Cold ,Linear ,Load      ,i32,NEON,4.382,18.70
+Cold ,Linear ,Store     ,i32,NEON,3.766,21.75
+Cold ,Linear ,Load+Store,i32,NEON,6.715,24.40
+Cold ,Random ,Load      ,i32,NEON,7.687,10.66
+Cold ,Random ,Store     ,i32,NEON,9.775,8.38
+Cold ,Random ,Load+Store,i32,NEON,12.531,13.07
+Hot  ,Same   ,Load      ,i64,NEON,68.605,23.88
+Hot  ,Same   ,Store     ,i64,NEON,44.269,37.01
+Hot  ,Same   ,Load+Store,i64,NEON,420.604,7.79
+Hot  ,Linear ,Load      ,i64,NEON,68.528,23.91
+Hot  ,Linear ,Store     ,i64,NEON,44.662,36.68
+Hot  ,Linear ,Load+Store,i64,NEON,85.939,38.13
+Hot  ,Random ,Load      ,i64,NEON,68.550,23.90
+Hot  ,Random ,Store     ,i64,NEON,72.283,22.67
+Hot  ,Random ,Load+Store,i64,NEON,80.995,40.46
+Cold ,Same   ,Load      ,i64,NEON,6.862,23.87
+Cold ,Same   ,Store     ,i64,NEON,4.416,37.10
+Cold ,Same   ,Load+Store,i64,NEON,42.040,7.79
+Cold ,Linear ,Load      ,i64,NEON,6.859,23.89
+Cold ,Linear ,Store     ,i64,NEON,4.423,37.04
+Cold ,Linear ,Load+Store,i64,NEON,6.928,47.30
+Cold ,Random ,Load      ,i64,NEON,8.054,20.34
+Cold ,Random ,Store     ,i64,NEON,10.428,15.71
+Cold ,Random ,Load+Store,i64,NEON,13.291,24.65

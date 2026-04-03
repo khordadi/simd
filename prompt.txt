@@ -40,3 +40,32 @@ L3        80M      80M   16 Unified         3 81920                      64
 - use clang-22
 - show the result in cli
 - also generate the result file (result.csv) so I can send it to you later for visualization
+
+
+
+
+
+
+
+
+
+
+
+- the task is to microbenchmark the performance of gather/scatter operation on NEON and SVE
+- SVE has native hardware support for scatter/gather operations, but NEON does not
+- so we will be emulating scatter/gather operations on NEON using a combination of load/store and shuffle instructions.
+- do it for load-only, store-only, load-store
+- do it for different data type (i32, i64)
+- do it for data size: l1-hot and l1-cold
+- do it for: same address indexes, linear address indexes, random indexes
+- give a c file (benchmark.c) that implements the microbenchmark for both NEON and SVE
+- give instruction to compile it 
+- use clang to compile it
+- give me a table with this columns (also do for-loop in this order):
+L1 Cache: Cold | Hot
+Memory Access Pattern: Same | Linear | Random
+Operation: Load | Store | Load+Store
+Data Type: i32 | i64
+Arch: NEON | SVE
+Duration: in ms
+Bandwith: in Gb/s

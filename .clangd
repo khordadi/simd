@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: [
+    "-Ibenchmarks/simd-loops/common",
+  ]
